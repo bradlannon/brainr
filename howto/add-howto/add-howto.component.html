@@ -1,0 +1,42 @@
+ <section id="services">
+   <div class="container inputBG">
+    <div class="row padder">
+        <div class="col-sm-12">
+          <h3 class="page-header">Add HowTo</h3>
+          <form (submit)="onAddSubmit()">
+
+            <div class="form-group">
+              <md-input-container>
+                  <textarea mdInput placeholder="Title" name="title" [(ngModel)]="title" value="{{title}}"></textarea>
+              </md-input-container>
+            </div>
+
+            <div class="form-group">
+              <md-input-container>
+                  <textarea mdInput placeholder="Description" name="description" [(ngModel)]="description" value="{{description}}"></textarea>
+              </md-input-container>
+            </div>
+
+            <div class="form-group">
+                <md-select placeholder="Location" [(ngModel)]="location" name="location">
+                <md-option value="Protector">Protector</md-option>
+                <md-option value="Preserver">Preserver</md-option>
+                <md-option value="Endurance">Endurance</md-option>
+                <md-option value="Fundy">Fundy</md-option>
+                <md-option value="Belle">Belle</md-option>
+                <md-option value="Concord">Concord</md-option>
+                <md-option value="Randell">Randell</md-option>
+                <md-option value="Other">Other</md-option>
+                <md-option value="Office">Office</md-option>
+              </md-select>
+            </div>
+
+          <div class="form-group">
+            <input type="submit" value="submit" class="btn btn-success">
+            <a class="btn btn-default" [routerLink]="['/howtos']">Back</a>
+          </div>
+        </form>
+      </div>
+   </div>
+</div>
+ </section>

@@ -1,0 +1,33 @@
+  <section id="services">
+        <div class="container inputBG">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <md-input-container>
+                        <input mdInput placeholder="Search Contacts" name="search" [(ngModel)]="listFilter">
+                    </md-input-container>
+                    <a class="btn btn-success btn-sm" [routerLink]="['/add-contact']">Add Contact</a>
+                </div>
+            </div>
+      
+        
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                   
+                    <table>
+                    <thead>
+                        <tr>
+                            <th> Name </th>
+                            <th> Phone </th>           
+                         </tr>
+                    </thead>
+                    <tr *ngFor="let contact of contacts | contactFilter:listFilter"
+                          [class.selected]="contact === selectedContact">
+                        <td><a [routerLink]="['/contact/'+contact.$key]">{{contact.firstName}} {{contact.lastName}}</a> </td>
+                        <td><a [routerLink]="['/contact/'+contact.$key]">{{contact.phone}}</a></td>     
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+  </section>

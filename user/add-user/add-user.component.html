@@ -1,0 +1,49 @@
+ <section id="services">
+   <div class="container inputBG">
+    <div class="row padder">
+        <div class="col-sm-12">         
+          <h3 class="page-header">Add User</h3>
+          <form (submit)="onAddSubmit()">
+
+            <div class="form-group">
+              <md-input-container class="text-full-width"r>
+                  <input mdInput placeholder="Username (with domain)" name="userid" [(ngModel)]="userid" value="{{userid}}" required>
+              </md-input-container>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Password" name="password" [(ngModel)]="password" value="{{password}}">
+              </md-input-container>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Role" name="role" [(ngModel)]="role" value="{{role}}">
+              </md-input-container>
+            </div>
+
+              <div class="form-group text-full-width">
+                <md-select placeholder="Vessel" [(ngModel)]="vessel" name="vessel">
+                <md-option value="Protector">Protector</md-option>
+                <md-option value="Preserver">Preserver</md-option>
+                <md-option value="Endurance">Endurance</md-option>
+                <md-option value="Fundy">Fundy</md-option>
+                <md-option value="Belle">Belle</md-option>
+                <md-option value="Concord">Concord</md-option>
+                <md-option value="Randell">Randell</md-option>
+                <md-option value="Other">Other</md-option>
+                <md-option value="Office">Office</md-option>
+              </md-select>
+            </div>
+                       
+            <input type="submit" value="submit" class="btn btn-success">
+            <a class="btn btn-default" [routerLink]="['/users']">Back</a>
+            
+          </form>
+        </div>
+    </div>
+</div>
+ </section>
+            
+         

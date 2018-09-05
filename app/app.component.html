@@ -1,0 +1,129 @@
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" routerLink="/brainr"><img src="../assets/images/brainx.png" width="50px"></a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                          <li class="nav-item">
+                        <a class="nav-link" routerLink="/computers"><md-icon md-list-icon>important_devices</md-icon> Computers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/users"><md-icon md-list-icon>account_box</md-icon> Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/contacts"><md-icon md-list-icon>perm_identity</md-icon> Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/howtos"><md-icon md-list-icon>help</md-icon> HowTo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/tasks"><md-icon md-list-icon>airport_shuttle</md-icon> Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/expenses"><md-icon md-list-icon>shopping_cart</md-icon> Expenses</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" routerLink="/test"><md-icon md-list-icon>update</md-icon> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+<!--
+
+<button md-icon-button [mdMenuTriggerFor]="menu">
+  <img src="../assets/images/brainx.png" width="50px">
+ 
+</button>
+<md-menu #menu="mdMenu">
+  <button md-menu-item routerLink="/brainr">
+    <md-icon>check_box</md-icon>
+    <span>BrainR</span>
+  </button>
+  <button md-menu-item routerLink="/computers">
+    <md-icon>important_devices</md-icon>
+    <span>Computers</span>
+    </button>
+  <button md-menu-item routerLink="/users">
+    <md-icon>account_box</md-icon>
+    <span>Users</span>
+  </button>
+    <button md-menu-item routerLink="/contacts">
+    <md-icon>perm_identity</md-icon>
+    <span>Contacts</span>
+  </button>
+  <button md-menu-item routerLink="/howtos">
+    <md-icon>help</md-icon>
+    <span>How To</span>
+  </button>
+    <button md-menu-item routerLink="/tasks">
+    <md-icon>airport_shuttle</md-icon>
+    <span>Tasks</span>
+  </button >
+    <button md-menu-item routerLink="/expenses">
+    <md-icon>cake</md-icon>
+    <span>Expenses</span>
+  </button>
+  <button md-menu-item click="logout()">
+    <md-icon>logout</md-icon>
+    <span>Logout</span>
+    </button>
+</md-menu>
+
+-->
+
+<!--
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"><img src="../assets/images/brainx.png" width="50px"></a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" *ngIf="state">
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/brainr" routerLinkActive="active">BrainR</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/computers" routerLinkActive="active">Computers</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/users" routerLinkActive="active">User</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/howtos" routerLinkActive="active">HowTo</a>
+      </li>
+
+     <li class="nav-item">
+        <a class="nav-link" routerLink="/tasks" routerLinkActive="active">Tasks</a>
+      </li>
+
+    <li class="nav-item">
+       <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contact</a>
+      </li>
+
+   <li class="nav-item">
+       <a class="nav-link" routerLink="/expenses" routerLinkActive="active">Expense</a>
+      </li>
+
+    <li class="nav-item">
+         <a (click)="logout()"  class="nav-link" routerLink="/contacts" routerLinkActive="active">Logout</a>
+
+      </li>
+  
+    </ul>
+
+  </div>
+</nav>
+
+-->
+<router-outlet></router-outlet>

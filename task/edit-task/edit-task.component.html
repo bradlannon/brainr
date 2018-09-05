@@ -1,0 +1,64 @@
+ <section id="services">
+   <div class="container inputBG">
+    <div class="row padder">
+        <div class="col-sm-12">
+          <form (submit)="onEditSubmit()">
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Title" name="title" [(ngModel)]="title" value="{{title}}" required>
+              </md-input-container>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Description" name="description" [(ngModel)]="description" value="{{description}}">
+              </md-input-container>
+            </div>
+
+              <div class="form-group text-full-width">
+                <md-select placeholder="Location" [(ngModel)]="location" name="location">
+                <md-option value="Protector">Protector</md-option>
+                <md-option value="Preserver">Preserver</md-option>
+                <md-option value="Endurance">Endurance</md-option>
+                <md-option value="Fundy">Fundy</md-option>
+                <md-option value="Belle">Belle</md-option>
+                <md-option value="Concord">Concord</md-option>
+                <md-option value="Randell">Randell</md-option>
+                <md-option value="Other">Other</md-option>
+                <md-option value="Office">Office</md-option>
+              </md-select>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                <input mdInput [mdDatepicker]="picker" placeholder="Date Due" name="dateDue" [(ngModel)]="dateDue" value="{{dateDue}}">
+                <button mdSuffix [mdDatepickerToggle]="picker"></button>
+              </md-input-container>
+              <md-datepicker #picker></md-datepicker>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Date Created" name="dateCreated" [(ngModel)]="dateCreated" value="{{dateCreated}}">
+              </md-input-container>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Importance" name="importance" [(ngModel)]="importance" value="{{importance}}">
+              </md-input-container>
+            </div>
+            <!--
+            <div class="form-group">
+              <input id="image" name="image" [(ngModel)]="image" type="file" >
+            </div>
+          -->
+            <input type="submit" value="submit" class="btn btn-success">
+            <a class="btn btn-default" [routerLink]="['/tasks']">Back</a>
+            
+          </form>
+        </div>
+    </div>
+</div>
+ </section>

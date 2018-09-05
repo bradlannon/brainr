@@ -1,0 +1,36 @@
+ <section id="services">
+    <div class="container inputBG">
+        <div class="row padder">
+            <div class="col-sm-12">
+              <form (submit)="onEditSubmit()">
+                <div class="form-group">
+                  <md-input-container class="text-full-width">
+                      <input mdInput placeholder="First Name" name="firstName" [(ngModel)]="firstName" value="{{firstName}}" >
+                  </md-input-container>
+                </div>
+                
+                <div class="form-group">
+                  <md-input-container class="text-full-width">
+                      <input mdInput placeholder="Last Name" name="lastName" [(ngModel)]="lastName" value="{{lastName}}" >
+                  </md-input-container>
+                </div>
+
+                <div class="form-group">
+                  <md-input-container class="text-full-width">
+                      <input tel mdInput placeholder="Phone" name="phone" [(ngModel)]="phone" value="{{phone}}" >
+                  </md-input-container>
+                </div>
+
+                <div class="form-group">
+                  <md-input-container class="text-full-width">
+                      <textarea mdInput placeholder="Info" name="info" [(ngModel)]="info" value="{{info}}" ></textarea>
+                  </md-input-container>
+                </div>
+               
+                <input type="submit" value="submit" class="btn btn-success">
+                <a class="btn btn-default" [routerLink]="['/contacts']">Back</a>    
+              </form>
+            </div>
+        </div>
+    </div>
+ </section>

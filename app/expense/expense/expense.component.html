@@ -1,0 +1,61 @@
+  <section id="services">
+    <div class="container inputBG">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div  *ngIf="expense">
+             <div class="form-group">
+              <md-input-container class="text-full-width">
+                <input mdInput [mdDatepicker]="picker" placeholder="Date" name="date" [(ngModel)]="expense.date" disabled>
+                <button mdSuffix [mdDatepickerToggle]="picker"></button>
+              </md-input-container>
+              <md-datepicker #picker></md-datepicker>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Travel To" name="travelTo" [(ngModel)]="expense.travelTo" disabled>
+              </md-input-container>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Travel From" name="travelFrom" [(ngModel)]="expense.travelFrom" disabled>
+              </md-input-container>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Title" name="title" [(ngModel)]="expense.title" disabled>
+              </md-input-container>
+            </div>
+
+            <div class="form-group">
+              <md-input-container class="text-full-width">
+                  <input mdInput placeholder="Amount" name="amount" [(ngModel)]="expense.amount" disabled>
+              </md-input-container>
+            </div>
+           
+              <div class="form-group" class="text-full-width">
+                <md-select placeholder="Vessel" [(ngModel)]="expense.vessel" disabled>
+                <md-option value="Protector">Protector</md-option>
+                <md-option value="Preserver">Preserver</md-option>
+                <md-option value="Endurance">Endurance</md-option>
+                <md-option value="Fundy">Fundy</md-option>
+                <md-option value="Belle">Belle</md-option>
+                <md-option value="Concord">Concord</md-option>
+                <md-option value="Randell">Randell</md-option>
+                <md-option value="Other">Other</md-option>
+                <md-option value="Office">Office</md-option>
+              </md-select>
+            </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <a class="btn btn-success" [routerLink]="['/edit-expense/'+expense.$key]">Edit</a>
+        <a (click)="onDeleteClick()" class="btn btn-danger">Delete</a>
+        <a class="btn btn-default" [routerLink]="['/expenses']"> Cancel</a>
+      </div>
+    </div>
+</div>
+
+  </section>

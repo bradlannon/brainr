@@ -1,0 +1,35 @@
+
+  <section id="services">
+        <div class="container inputBG">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <md-input-container>
+                        <input mdInput placeholder="Search Tasks" name="search" [(ngModel)]="listFilter">
+                    </md-input-container>
+                    <a class="btn btn-success btn-sm" [routerLink]="['/add-task']">Add Task</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <table>
+                    <thead>
+                        <tr>
+                            <th> Title </th>
+                            <th> Location </th>
+                            <th> Date Due </th>                        
+                            <th> Importance </th>           
+                         </tr>
+                    </thead>
+                    <tr *ngFor="let task of tasks | taskFilter:listFilter"
+                          [class.selected]="task === selectedTask" >
+                        <td><a [routerLink]="['/task/'+task.$key]">{{task.title}}</a></td>
+                        <td><a [routerLink]="['/task/'+task.$key]">{{task.location}}</a></td>
+                        <td><a [routerLink]="['/task/'+task.$key]">{{task.dateDue}}</a></td>
+                        <td><a [routerLink]="['/task/'+task.$key]">{{task.importance}}</a></td>    
+                    </tr>
+                </table>
+            </div>
+    </div>
+</div>
+

@@ -1,0 +1,76 @@
+ <section id="services ">
+    <div class="container inputBG">
+        <div class="row padder">
+            <div class="col-sm-12">
+                <md-input-container class="example-full-width">
+                    <input mdInput placeholder="Search" value="" [(ngModel)]='listFilter'> 
+                </md-input-container>       
+            </div>
+        </div>
+    
+        <div class="row padder">
+            <div class="col-sm-12">
+                <md-checkbox class="example-margin" [(ngModel)]="showComputers">Computers</md-checkbox>
+                <md-checkbox class="example-margin" [(ngModel)]="showUsers">Users</md-checkbox>
+                <md-checkbox class="example-margin" [(ngModel)]="showContacts">Contacts </md-checkbox>
+                <md-checkbox class="example-margin" [(ngModel)]="showHowTos">How To</md-checkbox>
+                <md-checkbox class="example-margin" [(ngModel)]="showTasks">Tasks</md-checkbox>
+                
+                </div>
+        </div>
+  
+
+
+    
+        <div class="row padder">
+            <div class="col-sm-12">
+                <div class="list-group computerTable" *ngIf="showComputers">
+                    <md-list>
+                    <md-list-item *ngFor="let computer of computers | computerFilter:listFilter">
+                        <md-icon md-list-icon>important_devices</md-icon>
+                        <div md-line class="demo-2"><a [routerLink]="['/computer/'+computer.$key]">{{computer.vessel}} / {{computer.computerName}} ({{computer.ipaddress}})</a> </div>
+                        </md-list-item>
+                    </md-list>
+                </div>
+
+                <div class="list-group userTable"  *ngIf="showUsers">
+                    <md-list>
+                    <md-list-item *ngFor="let user of users| userFilter:listFilter">
+                        <md-icon md-list-icon>account_box</md-icon>
+                        <p md-line><a [routerLink]="['/user/'+user.$key]">{{user.vessel}} / {{user.userid}} - {{user.password}}</a></p> 
+                    </md-list-item>    
+                    </md-list>
+                </div>
+
+                
+                <div class="list-group contactTable"  *ngIf="showContacts">
+                    <md-list>
+                    <md-list-item *ngFor="let contact of contacts| contactFilter:listFilter">
+                        <md-icon md-list-icon>perm_identity</md-icon>
+                        <p md-line><a [routerLink]="['/contact/'+contact.$key]">{{contact.firstName}} {{contact.lastName}} - {{contact.phone}}</a></p> 
+                    </md-list-item>
+                    </md-list>
+                </div>
+
+                <div class="list-group howtoTable"  *ngIf="showHowTos">   
+                    <md-list>               
+                    <md-list-item *ngFor="let howto of howtos| howtoFilter:listFilter">
+                        <md-icon md-list-icon>help</md-icon>
+                        <p md-line><a [routerLink]="['/howto/'+howto.$key]">{{howto.location}} / {{howto.title}}</a></p> 
+                    </md-list-item>
+                    </md-list>
+                </div>
+
+                <div class="list-group taskTable"  *ngIf="showTasks">   
+                    <md-list> 
+                    <md-list-item *ngFor="let task of tasks| taskFilter:listFilter">
+                        <md-icon md-list-icon>airport_shuttle</md-icon>
+                        <p md-line><a [routerLink]="['/task/'+task.$key]">{{task.title}} - {{task.dateDue}} </a></p> 
+                    </md-list-item>
+                    </md-list>
+                </div>          
+            </div>
+        </div>
+    </div>
+
+ </section>
